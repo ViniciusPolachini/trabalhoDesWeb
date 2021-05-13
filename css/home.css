@@ -1,0 +1,57 @@
+*
+{
+    margin: 0px 0px 0px 0px;
+}
+
+
+
+nav
+{
+    height: 5vw;
+}
+
+#Carrinho
+{
+    height: 5vw;
+    width: 5vw;
+    background-color: red;
+    border-radius: 100px;
+    position: fixed;
+    margin-top: 1vw;
+    margin-left: 1vw;
+}
+
+/* Protudos*/
+#Produtos
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+#Container
+{
+    margin-top: 3vh;
+}
+
+.produto
+{
+    height: 26vw;
+    width: 20vw;
+    background-color: chartreuse;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 5vh;
+}
+
+.produto img{
+    height: 15vw;
+    width: 20vw;
+}
+
+.produto p, button{
+    margin-top: 2vh;
+    margin-left: 1vw;
+}
