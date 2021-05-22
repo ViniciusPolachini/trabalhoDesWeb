@@ -4,19 +4,33 @@
 }
 
 
-
-nav
+#Sup
 {
     height: 5vw;
+    width: 100vw;
+}
+
+#Navbar
+{
+    position: fixed;
+    height: 6vw;
+    width: 100vw;
+}
+
+#Login
+{
+    
+   display: inline-block;
+   margin-bottom: 5vh;
 }
 
 #Carrinho
 {
+    display: inline-block;
     height: 5vw;
     width: 5vw;
     background-color: red;
     border-radius: 100px;
-    position: fixed;
     margin-top: 1vw;
     margin-left: 1vw;
 }

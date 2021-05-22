@@ -1,16 +1,20 @@
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=devide-width,
-        inicial-scale=1.0">
-        <link rel="stylesheet" href="../css/home.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/home.css') }}">
     </head>
     <body>
-        <nav>
+        <nav id="Navbar">
             <div id="Carrinho">
-
+            
             </div>
+            <a href="http://localhost:5000/login">
+            <button id="Login" onclick="">
+                login
+            </button>
+            </a>
         </nav>
+        <div id="Sup">
+        </div>
         <div id=Container>
             <form>
                 <input type="text" placeholder="busca">
