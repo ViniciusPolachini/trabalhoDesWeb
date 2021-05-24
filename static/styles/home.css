@@ -3,18 +3,12 @@
     margin: 0px 0px 0px 0px;
 }
 
-
-#Sup
-{
-    height: 5vw;
-    width: 100vw;
-}
-
 #Navbar
 {
-    position: fixed;
+    position: sticky;
     height: 6vw;
     width: 100vw;
+    top: 0;
 }
 
 #Login
