@@ -1,35 +1,96 @@
-*
-{
+*{
     margin: 0px 0px 0px 0px;
 }
 
-#Navbar
-{
-    position: sticky;
-    height: 6vw;
-    width: 100vw;
-    top: 0;
+html{
+    height: 100%;
+    width: 100%;
 }
 
-#Login
-{
-    
-   display: inline-block;
-   margin-bottom: 5vh;
+body{
+    display: grid;
+    grid-template-columns: 15vw auto;
+    grid-template-rows: 23vh auto;
+    height: 100%;
+    width: 100%;
 }
 
-#Carrinho
-{
+#Navbar{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: #999;
+    display: flex;
+    align-items: center;
+}
+
+#Sidebar{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#Content{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: #AAA;
+}
+
+#LogoPic{
+    height: 9vw;
+    width: 9vw;
+    margin-left: 3vw;
+}
+
+#DivBusca{
+    display: flex;
+    border-radius: 50px;
+    width: 50%;
+    height: 35%;
+    background-color: white;
+    justify-content: left;
+    align-items: center;
+    margin-left: 12vw;
+}
+
+#Lupa{
+    height: 4vh;
+    width: 4vh;
+    margin: 0 7px;
+}
+
+#InputBusca{
+    height: 80%;
+    width: 36vw;
+    border: none;
+    font-size: 100%;
+    align-content: center;
+    position: relative;
     display: inline-block;
-    height: 5vw;
-    width: 5vw;
-    background-color: red;
-    border-radius: 100px;
-    margin-top: 1vw;
-    margin-left: 1vw;
 }
 
-/* Protudos*/
+#InputBusca:focus{
+    outline-width: 0px;
+}
+
+#Login{
+    height: 35%;
+    width: 10vw;
+    outline-width: 0px;
+    background-color: purple;
+    color: white;
+    border: none;
+}
+#Login:hover{
+    box-shadow: 1px 2px 4px rgb(0, 0, 0, .5);
+}
+
+
+/* Produtos*/
 #Produtos
 {
     display: flex;

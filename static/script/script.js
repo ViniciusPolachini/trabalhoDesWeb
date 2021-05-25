@@ -1,6 +1,6 @@
 /* Pagina principal */
 
-let produtos = [
+let Produtos = [
     {Nome: "Cacto", categoria: "Planta", Preco: "15", Img: "https://s2.glbimg.com/pjgEaY16g_N5HANfZFi3Uilxqls=/1024x768/s.glbimg.com/po/tt/f/original/2011/09/26/gaiola_dos_macacos.jpg"},
     {Nome: "Vazo inteligente", categoria: "Vazos", Preco: "150", Img: "https://s2.glbimg.com/pjgEaY16g_N5HANfZFi3Uilxqls=/1024x768/s.glbimg.com/po/tt/f/original/2011/09/26/gaiola_dos_macacos.jpg"},
     {Nome: "Tesoura de poda", categoria: "Ferramentas", Preco: "40", Img: "https://s2.glbimg.com/pjgEaY16g_N5HANfZFi3Uilxqls=/1024x768/s.glbimg.com/po/tt/f/original/2011/09/26/gaiola_dos_macacos.jpg"},
@@ -16,7 +16,7 @@ function criaProdutos()
     let preco;
     let categoria;
 
-    for(let i of produtos)
+    for(let i of Produtos)
     {
         div = document.createElement('div');
         img = document.createElement('img');
@@ -36,8 +36,17 @@ function criaProdutos()
         div.appendChild(categoria);
         div.appendChild(preco);
 
-        document.getElementById("Produtos").appendChild(div);
+        document.getElementById("Content").appendChild(div);
     }
+}
+
+function filtrar (produtos, categoria){
+    function filtro (produto){
+        if (produto.categoria == categoria)
+            return true;
+        return false
+    }
+    return produtos.filter(filtro)
 }
 
 window.onload = criaProdutos();

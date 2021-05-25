@@ -3,24 +3,22 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/home.css') }}">
     </head>
     <body>
-        <nav id="Navbar">
-            <div id="Carrinho">
-            
-            </div>
-            <a href="http://localhost:5000/login">
-            <button id="Login" onclick="">
-                login
-            </button>
+        <div id="Navbar">
+            <a href="localhost:5000">
+                <img id="LogoPic" src="{{ url_for('static',filename='images/logo.png') }}" alt="">
             </a>
-        </nav>
-        <div id=Container>
-            <form>
-                <input type="text" placeholder="busca">
-            </form>
-            <div id="Produtos">
-                
+            <div id="DivBusca">
+                <img id="Lupa" src="{{ url_for('static',filename='images/lupa.png') }}" alt="">
+                <form action="">
+                    <input id="InputBusca" type="text" placeholder="O que você deseja?">
+                </form>
+            </div>
+            <div>
+                <button id="Login">Faça seu login</button>
             </div>
         </div>
+        <div id="Sidebar"></div>
+        <div id="Content"></div>
         <script type="text/javascript" src="{{ url_for('static',filename='script/script.js') }}"></script>
     </body>
 </html>
