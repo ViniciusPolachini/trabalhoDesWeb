@@ -38,22 +38,37 @@ function criaProdutos(produtos)
     for(let i of produtos)
     {
         div = document.createElement('div');
+        divimg = document.createElement('div');
+        divtexto = document.createElement('div');
         img = document.createElement('img');
         nome = document.createElement('p');
         preco = document.createElement('p');
-        categoria = document.createElement('p');
+        preco2 = document.createElement('p');
+        botao = document.createElement('button');
 
         div.setAttribute('class', 'produto');
+        divimg.setAttribute('class', 'divimg');
+        divtexto.setAttribute('class', 'divtex');
+        img.setAttribute('class', 'imagem');
+        nome.setAttribute('class', 'nome-produto');
+        preco2.setAttribute('class', 'preco');
+        preco.setAttribute('class', 'preco1');
+        botao.setAttribute('class', 'addCarrinho');// atribuir funcao
 
         img.setAttribute("src", i.Img);
-        nome.innerHTML =`Nome: ${i.Nome}`;
-        categoria.innerHTML = `Categoria: ${i.categoria}`;
-        preco.innerHTML =`Preço: ${i.Preco}`;
+        nome.innerHTML =`${i.Nome}`;
+        preco.innerHTML =`${i.Preco} em até 12x sem juros`;
+        preco2.innerHTML =`${i.AVista} a vista`;
+        botao.innerHTML = `Adicionar ao carrinho`
 
-        div.appendChild(img);
-        div.appendChild(nome);
-        div.appendChild(categoria);
-        div.appendChild(preco);
+        divimg.appendChild(img);
+        divtexto.appendChild(nome);
+        divtexto.appendChild(preco);
+        divtexto.appendChild(preco2);
+        divtexto.appendChild(botao);
+
+        div.appendChild(divimg);
+        div.appendChild(divtexto);
 
         document.getElementById("Content").appendChild(div);
     }

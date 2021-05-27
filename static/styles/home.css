@@ -51,6 +51,8 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 /*-------- Navbar section --------*/
@@ -157,32 +159,72 @@ body{
 }
 
 /*-------- Content Section --------*/
-#Produtos
-{
+
+.produto{
+    height: 520px;
+    width: 280px;
+    margin: 3vh 2vw;
+    display: grid;
+    grid-template-rows: 45% auto;
+    border-radius: 5px;
+}
+.produto:hover{
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, .3);
+}
+
+.imagem{
+    height: 100%;
+    width: 100%;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: block;
+}
+
+.nome-produto{
+    font-size: 14px;
+    color: rgb(50, 50, 50);
+}
+
+.preco{
+    color: #601326;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.preco1{
+    font-size: 18px;
+}
+
+.divimg{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    height: 100%;
+    width: 100%;
+}
+
+.divtex{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    height: 100%;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 2vh;
 }
 
-#Container
-{
-    margin-top: 3vh;
+p{
+    margin: 5px;
 }
 
-.produto
-{
-    height: 26vw;
-    width: 20vw;
-    background-color: chartreuse;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    margin-top: 5vh;
+.addCarrinho{
+    height: 40px;
+    width: 200px;
+    margin: 10px;
+    color: white;
+    background-color: #d22954;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0, .3);
 }
-
-.produto img{
-    height: 15vw;
-    width: 20vw;
-}
-
