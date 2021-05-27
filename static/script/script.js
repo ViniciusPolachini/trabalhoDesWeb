@@ -25,15 +25,17 @@ let Produtos = [
     {Nome: "Kit de Peles Remo Encore Pinstripe Tons 10'',12'',14'' Filme Duplo tipo Hidráulica Clássica (10649)", categoria: "Peles", Preco: "R$209,00", AVista:"R$179,00", Img: "static/images/pele2.png"},
 ];
 
-function criaProdutos()
+function criaProdutos(produtos)
 {
+    document.getElementById("Content").innerHTML = "";
+
     let div;
     let img;
     let nome;
     let preco;
     let categoria;
 
-    for(let i of Produtos)
+    for(let i of produtos)
     {
         div = document.createElement('div');
         img = document.createElement('img');
@@ -66,4 +68,9 @@ function filtrar (produtos, categoria){
     return produtos.filter(filtro)
 }
 
-window.onload = criaProdutos();
+function recarregaProdutos(categoria){
+    let itens = filtrar(Produtos, categoria);
+    criaProdutos(itens);
+}
+
+window.onload = criaProdutos(Produtos);
