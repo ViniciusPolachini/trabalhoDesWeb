@@ -4,9 +4,11 @@
     </head>
     <body>
         <div id="Navbar">
-            <a href="localhost:5000">
-                <img id="LogoPic" src="{{ url_for('static',filename='images/logo.png') }}" alt="">
-            </a>
+            <div id="LogoPic">
+                <a href="localhost:5000">
+                    <img id="LogoPic2" src="{{ url_for('static',filename='images/logo.png') }}" alt="">
+                </a>
+            </div>
             <div id="DivBusca">
                 <img id="Lupa" src="{{ url_for('static',filename='images/lupa.png') }}" alt="">
                 <form action="">
@@ -14,10 +16,25 @@
                 </form>
             </div>
             <div>
-                <button id="Login">Faça seu login</button>
+                <div id="Login"><a id="LoginLetra" href="localhost:5000/login"> Faça seu login</a></div>
+            </div>
+            <div id="DivCarrinho">
+                <a href="localhost:5000/user">
+                    <img id="Carrinho" src="{{ url_for('static',filename='images/carrinho.png') }}" alt="">
+                </a>
             </div>
         </div>
-        <div id="Sidebar"></div>
+        
+        <div id="Categories">
+            <div id="DivCategorias">
+                <button class="botoes-categorias">Baterias</button>
+                <button class="botoes-categorias">Pratos</button>
+                <button class="botoes-categorias">Baquetas</button>
+                <button class="botoes-categorias">Ferragens</button>
+                <button class="botoes-categorias">Peles</button>
+                <button class="botoes-categorias">Acessórios</button>
+            </div>
+        </div>
         <div id="Content"></div>
         <script type="text/javascript" src="{{ url_for('static',filename='script/script.js') }}"></script>
     </body>
