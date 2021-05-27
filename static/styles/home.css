@@ -224,10 +224,15 @@ p{
     width: 200px;
     margin: 10px;
     color: white;
-    background-color: #d22954;
+    background-color: #df2c59;
     border: none;
     font-size: 18px;
     font-weight: bold;
     border-radius: 3px;
-    box-shadow: 0px 0px 5px rgb(0, 0, 0, .3);
+}
+
+.addCarrinho:hover{
+    background-color: #d22954;
+    cursor: pointer;
+    box-shadow: 0px 0px 6px 2px rgb(0, 0, 0, .3);
 }
