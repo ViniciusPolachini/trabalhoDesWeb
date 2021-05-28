@@ -1,14 +1,57 @@
 <html>
     <head>
-        <title>Bonk</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/home.css') }}">
     </head>
     <body>
         
-       <form action = 'http://localhost:5000/user' method='POST'>
-           <input type="text" name="username">
-           <input type="password" name="senha">
-           <input type="submit" value="entrar">
-       </form>
+        <div id="Navbar">
+            <div id="LogoPic">
+                <a href="localhost:5000">
+                    <img id="LogoPic2" src="{{ url_for('static',filename='images/logo.png') }}" alt="">
+                </a>
+            </div>
+            <div id="DivBusca">
+                <img id="Lupa" src="{{ url_for('static',filename='images/lupa.png') }}" alt="">
+                <form action="">
+                    <input id="InputBusca" type="text" placeholder="O que você deseja?">
+                </form>
+            </div>
+            <div>
+                <div id="Login"><a id="LoginLetra" href="localhost:5000/login"> Faça seu login</a></div>
+            </div>
+            <div id="DivCarrinho">
+                <a href="localhost:5000/user">
+                    <img id="CarrinhoLogo" src="{{ url_for('static',filename='images/carrinho.png') }}" alt="">
+                </a>
+            </div>
+        </div>
 
+        <div id="Categories">
+            <div id="DivCategorias">
+                <button class="botoes-categorias" onclick="recarregaProdutos('Baterias')">Baterias</button>
+                <button class="botoes-categorias" onclick="recarregaProdutos('Pratos')">Pratos</button>
+                <button class="botoes-categorias" onclick="recarregaProdutos('Baquetas')">Baquetas</button>
+                <button class="botoes-categorias" onclick="recarregaProdutos('Ferragens')">Ferragens</button>
+                <button class="botoes-categorias" onclick="recarregaProdutos('Peles')">Peles</button>
+                <button class="botoes-categorias" onclick="recarregaProdutos('Acessorios')">Acessórios</button>
+            </div>
+        </div>
+
+        <div id="Carrinho">
+            <div class="itemCarrinho">
+                <div class="iconeproduto"></div>
+                <p class="nome-carrinho">Produto xxxxxxxxxxxxxxxxxxxxxx</p>
+                <p class="qtd-carrinho">Qtd: 3</p>
+                <p class="preco-carrinho">R$xx,xx</p>
+            </div> 
+            <div class="itemCarrinho">
+                <div class="iconeproduto"></div>
+                <p class="nome-carrinho">Produto xxxxxxxxxxxxxxxxxxxxxx</p>
+                <p class="qtd-carrinho">Qtd: 3</p>
+                <p class="preco-carrinho">R$xx,xx</p>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="{{ url_for('static',filename='script/script.js') }}"></script>
     </body>
 </html>
