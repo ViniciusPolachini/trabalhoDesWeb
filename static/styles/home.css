@@ -127,7 +127,7 @@ body{
     margin-left: 3vw;
 }
 
-#Carrinho{
+#CarrinhoLogo{
     height: 100%;
     width: 100%;
 }
@@ -236,3 +236,42 @@ p{
     cursor: pointer;
     box-shadow: 0px 0px 6px 2px rgb(0, 0, 0, .3);
 }
+
+
+/*-------- Carrinho --------*/
+
+#Carrinho{
+    width: 90%;
+    height: fit-content;
+    margin: 20px auto;
+    border: solid 1px rgb(70, 70, 70);
+}
+
+.itemCarrinho{
+    width: 98%;
+    height: 70px;
+    border: solid 1px rgb(70, 70, 70);
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.iconeproduto{
+    width: 60px;
+    height: 60px;
+    margin: auto 5px;
+    background-color: blue;
+}
+
+.nome-carrinho{
+    margin: auto 10px;
+}
+
+.qtd-carrinho{
+    margin: auto 15px auto auto;;
+}
+
+.preco-carrinho{
+    margin: auto 15px;
+}
+
