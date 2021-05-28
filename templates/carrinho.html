@@ -6,7 +6,7 @@
         
         <div id="Navbar">
             <div id="LogoPic">
-                <a href="localhost:5000">
+                <a href="{{ url_for('index') }}">
                     <img id="LogoPic2" src="{{ url_for('static',filename='images/logo.png') }}" alt="">
                 </a>
             </div>
@@ -20,7 +20,7 @@
                 <div id="Login"><a id="LoginLetra" href="localhost:5000/login"> Faça seu login</a></div>
             </div>
             <div id="DivCarrinho">
-                <a href="localhost:5000/user">
+                <a href="{{ url_for('carrinho') }}">
                     <img id="CarrinhoLogo" src="{{ url_for('static',filename='images/carrinho.png') }}" alt="">
                 </a>
             </div>

@@ -1,7 +1,5 @@
 /* Pagina principal */
 
-let dados = JSON.parse(sessionStorage.getItem('carrinho'));
-
 let Produtos = [
     {Nome: "Bateria Eletrônica Alesis Command Kit com Pads em Mesh Heads, Módulo 600 Sons e Rack Premium Chrome", categoria: "Baterias", Preco: "R$9.999,00", AVista:"R$8.599,00", Img: "static/images/eletronica1.png", id:1},
     {Nome: "Bateria Eletrônica Alesis Nitro Mesh com Pad Dual Zone, Módulo 385 sons, Pedal Simples, Rack 4-Post", categoria: "Baterias", Preco: "R$5.697,00", AVista:"R$4.899,00", Img: "static/images/eletronica2.png", id:2},
@@ -27,7 +25,7 @@ let Produtos = [
     {Nome: "Kit de Peles Remo Encore Pinstripe Tons 10'',12'',14'' Filme Duplo tipo Hidráulica Clássica (10649)", categoria: "Peles", Preco: "R$209,00", AVista:"R$179,00", Img: "static/images/pele2.png", id:16},
 ];
 
-let Carrinho = dados ? dados[0].itens:[];
+let Carrinho = [];
 
 function criaProdutos(produtos)
 {
@@ -97,8 +95,8 @@ function enviaItens(){
 
     let dados = [{itens: Carrinho}]; 
     let itens = JSON.stringify(dados);
-    sessionStorage.clear('carrinho');
-    sessionStorage.setItem('carrinho', itens)
+    localStorage.clear('carrinho');
+    localStorage.setItem('carrinho', itens)
 }
 
 window.onload = criaProdutos(Produtos);

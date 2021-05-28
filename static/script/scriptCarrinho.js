@@ -1,4 +1,4 @@
-let dados = JSON.parse(sessionStorage.getItem('carrinho'));
+let dados = JSON.parse(localStorage.getItem('carrinho'));
 
 let Carrinho = dados[0].itens;
 
