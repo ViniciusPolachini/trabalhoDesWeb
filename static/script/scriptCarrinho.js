@@ -1,6 +1,6 @@
-/* Pagina principal */
-
 let dados = JSON.parse(sessionStorage.getItem('carrinho'));
+
+let Carrinho = dados[0].itens;
 
 let Produtos = [
     {Nome: "Bateria Eletrônica Alesis Command Kit com Pads em Mesh Heads, Módulo 600 Sons e Rack Premium Chrome", categoria: "Baterias", Preco: "R$9.999,00", AVista:"R$8.599,00", Img: "static/images/eletronica1.png", id:1},
@@ -27,78 +27,71 @@ let Produtos = [
     {Nome: "Kit de Peles Remo Encore Pinstripe Tons 10'',12'',14'' Filme Duplo tipo Hidráulica Clássica (10649)", categoria: "Peles", Preco: "R$209,00", AVista:"R$179,00", Img: "static/images/pele2.png", id:16},
 ];
 
-let Carrinho = dados ? dados[0].itens:[];
+function criaCarrinho(){
 
-function criaProdutos(produtos)
-{
-    document.getElementById("Content").innerHTML = "";
+    let carrinho = Carrinho;
+    let produtos = [];
+    let quantidade;
+    let id;
+    let produto;
+
+    while(carrinho.length){
+
+        nome = "";
+        quantidade = 1;
+        id = carrinho[0];
+        carrinho.splice(0,1);
+        
+        
+        for(let i=0; i<Produtos.length; i++){
+           if(Produtos[i].id == id){
+               produto = Produtos[i];
+               break;
+           }
+        }
+        
+        for(let i=0; i<carrinho.length; i++){
+            if(id==carrinho[i]){
+                quantidade ++;
+                carrinho.splice(i,1);
+            }
+        }
+
+        produtos.push({produto: produto, quantidade: quantidade});
+    }
 
     let div;
     let img;
-    let nome;
-    let preco;
+    let Pnome;
+    let Pquantidade;
+    let Ppreco;
 
-    for(let i of produtos)
-    {
+    for(let i of produtos){
+
         div = document.createElement('div');
-        divimg = document.createElement('div');
-        divtexto = document.createElement('div');
         img = document.createElement('img');
-        nome = document.createElement('p');
-        preco = document.createElement('p');
-        preco2 = document.createElement('p');
-        botao = document.createElement('button');
+        Pnome = document.createElement('p');
+        Pquantidade = document.createElement('p');
+        Ppreco = document.createElement('p');
 
-        div.setAttribute('class', 'produto');
-        divimg.setAttribute('class', 'divimg');
-        divtexto.setAttribute('class', 'divtex');
-        img.setAttribute('class', 'imagem');
-        nome.setAttribute('class', 'nome-produto');
-        preco2.setAttribute('class', 'preco');
-        preco.setAttribute('class', 'preco1');
-        botao.setAttribute('class', 'addCarrinho');// atribuir funcao
-        botao.setAttribute('value', i.id);
-        botao.onclick = (e) => Carrinho.push(e.target.value)
+        div.setAttribute('class', 'itemCarrinho');
+        img.setAttribute('class', 'iconeproduto');
+        img.setAttribute('src', i.produto.Img);
+        Pnome.setAttribute('class', 'nome-carrinho');
+        Pquantidade.setAttribute('class', 'qtd-carrinho');
+        Ppreco.setAttribute('class', 'preco-carrinho');
 
-        img.setAttribute("src", i.Img);
-        nome.innerHTML =`${i.Nome}`;
-        preco.innerHTML =`${i.Preco} em até 12x sem juros`;
-        preco2.innerHTML =`${i.AVista} a vista`;
-        botao.innerHTML = `Adicionar ao carrinho`
+        Pnome.innerHTML = i.produto.Nome;
+        Pquantidade.innerHTML = i.quantidade;
+        Ppreco.innerHTML = i.produto.Preco;
 
-        divimg.appendChild(img);
-        divtexto.appendChild(nome);
-        divtexto.appendChild(preco);
-        divtexto.appendChild(preco2);
-        divtexto.appendChild(botao);
+        div.appendChild(img);
+        div.appendChild(Pnome);
+        div.appendChild(Pquantidade);
+        div.appendChild(Ppreco);
 
-        div.appendChild(divimg);
-        div.appendChild(divtexto);
-
-        document.getElementById("Content").appendChild(div);
+        document.getElementById('Carrinho').appendChild(div);
     }
 }
 
-function filtrar (produtos, categoria){
-    function filtro (produto){
-        if (produto.categoria == categoria)
-            return true;
-        return false
-    }
-    return produtos.filter(filtro)
-}
-
-function recarregaProdutos(categoria){
-    let itens = filtrar(Produtos, categoria);
-    criaProdutos(itens);
-}
-
-function enviaItens(){
-
-    let dados = [{itens: Carrinho}]; 
-    let itens = JSON.stringify(dados);
-    sessionStorage.clear('carrinho');
-    sessionStorage.setItem('carrinho', itens)
-}
-
-window.onload = criaProdutos(Produtos);
+window.onload = criaCarrinho();
