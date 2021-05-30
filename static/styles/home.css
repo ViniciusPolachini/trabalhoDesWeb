@@ -150,7 +150,7 @@ body{
     color: #601326;
     font-weight: bold;
     height: 100%;
-    width: 10vw;
+    width: 13vw;
 }
 .botoes-categorias:hover{
     background-color: #601326;
@@ -242,9 +242,16 @@ p{
 
 #Carrinho{
     width: 90%;
-    height: fit-content;
+    height: 30vh;
     margin: 20px auto;
     border: solid 1px rgb(70, 70, 70);
+    overflow-y: auto;
+}
+
+#TituloCarrinho{
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
 }
 
 .itemCarrinho{
