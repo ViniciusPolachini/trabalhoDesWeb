@@ -240,10 +240,17 @@ p{
 
 /*-------- Carrinho --------*/
 
+#ContentCarrinho{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    display: flex;
+    flex-direction: column;
+}
+
 #Carrinho{
     width: 90%;
     height: 30vh;
-    margin: 20px auto;
+    margin: 20px auto 5px auto;
     border: solid 1px rgb(70, 70, 70);
     overflow-y: auto;
 }
@@ -275,10 +282,25 @@ p{
 }
 
 .qtd-carrinho{
-    margin: auto 15px auto auto;;
+    margin: auto 15px auto auto;
 }
 
 .preco-carrinho{
     margin: auto 15px;
 }
 
+#DivTotal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#Subtotal{
+    width: 90%;
+    height: 35px;
+    margin: 5px auto 20px auto;
+    border: solid 1px rgb(70, 70, 70);
+    display: flex;
+    flex-direction: row;
+}
