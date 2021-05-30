@@ -304,3 +304,88 @@ p{
     display: flex;
     flex-direction: row;
 }
+
+#Entrega{
+    width: 60%;
+    height: 55vh;
+    margin: 0px auto 5px auto;
+    border: solid 1px rgb(70, 70, 70);
+    display: flex;
+    background-color: #d22954 ;
+    box-shadow: inset 0px 0px 5px 5px #601326; 
+    
+    
+}
+
+#LoginCarrinho{
+    width: 48%;
+    height: 50vh;
+    margin: 1vw auto 1vw auto;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f93163;
+    box-shadow: 0px 0px 5px 5px #d22954; 
+    
+    
+}
+#Email{
+    height: 4vh;
+    font-size: 18px;
+    margin: 0 5% 0 4%;
+}
+
+#Password{
+    height: 4vh;
+    font-size: 18px;
+    margin: 0 40% 0 4%;
+}
+
+label{
+    font-size:24px;
+    margin: 2% 0 1% 4%;
+    color: white;
+    font-weight: bold;
+
+}
+
+
+.Blogin{
+    height: 50px;
+    width: 92%;
+    outline-width: 0px;
+    background-color: #601326;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    margin: 25px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.Blogin:hover{
+    box-shadow: 1px 2px 4px rgb(0, 0, 0, .5);
+}
+#Endereco{
+    width: 48%;
+    height: 50vh;
+    margin: 1vw auto 1vw auto;
+    display: flex;
+    align-items: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f93163;
+    box-shadow: 0px 0px 5px 5px #d22954; 
+}
+
+.tituloentrega{
+    font-size:30px;
+    margin: 10px auto;
+    color: white;
+    font-weight: bold;
+
+    }

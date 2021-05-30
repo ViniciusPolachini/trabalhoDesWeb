@@ -27,6 +27,21 @@ let Produtos = [
     {Nome: "Kit de Peles Remo Encore Pinstripe Tons 10'',12'',14'' Filme Duplo tipo Hidráulica Clássica (10649)", categoria: "Peles", Preco: 209.00, AVista:179.00, Img: "static/images/pele2.png", id:16},
 ];
 
+$(function(){
+    var opcoesEstados;
+    $.getJSON('static/script/Estados.json',function(result){
+        $.each(result, function(i, estado){
+            opcoesEstados+="<option value=' "
+            +estado.ID+
+            "'>"
+            +estado.Nome+
+            "</option>";
+            });
+            $(`#estado`).html(opcoesEstados);
+    });    
+});
+
+
 function criaCarrinho(){
 
     let carrinho = Carrinho;
@@ -103,7 +118,7 @@ function criaCarrinho(){
     divtotal.setAttribute('id', 'DivTotal');
     ptotal.setAttribute('class', 'nome-carrinho');
     total.setAttribute('class', 'qtd-carrinho');
-
+ 
     ptotal.innerHTML = `Total:`;
     total.innerHTML = `R$${subtotal},00`;
 
@@ -112,5 +127,6 @@ function criaCarrinho(){
 
     document.getElementById('Subtotal').appendChild(divtotal);
 }
+
 
 window.onload = criaCarrinho();

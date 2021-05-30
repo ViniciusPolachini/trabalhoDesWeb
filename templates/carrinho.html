@@ -2,6 +2,8 @@
     <head>
         <title>Carrinho</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/home.css') }}">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="#" />
     </head>
     <body>
         
@@ -36,8 +38,31 @@
         <div id="ContentCarrinho">
             <div id="Carrinho"></div>
             <div id="Subtotal"></div>
+            <div id="Entrega">
+                <div id="LoginCarrinho">
+                    <p class="tituloentrega">Dados Pessoais</p>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" >
+                    <label for="password">Senha:</label>
+                    <input type="password" id="Password" >
+                    <input type="button" class="Blogin" value="Login">
+                </div>
+                <div id="Endereco">
+                    <p class="tituloentrega">Endereço de Entrega</p>
+                    <input type="text" name="" id="Cep" placeholder="CEP">
+                    <input type="text" id="Rua" placeholder="Endereco">
+                    <input type="number" name="" id="Numero" placeholder="Numero">
+                    <input type="text" id="Bairro" placeholder="Bairro">
+                    <input type="text" id="Complemento" placeholder="Complemento">
+                    Estado: 
+                    <select id="estado"></select>
+                    <input type="tel" id="Telefone" placeholder="Telefone">
+                    <input type="button" class="Blogin" value="Finalizar Compra">
+                </div>
+            </div>
         </div>
 
         <script type="text/javascript" src="{{ url_for('static',filename='script/scriptCarrinho.js') }}"></script>
+        
     </body>
 </html>
