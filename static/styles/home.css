@@ -251,8 +251,9 @@ p{
     width: 90%;
     height: 30vh;
     margin: 20px auto 5px auto;
-    border: solid 1px rgb(70, 70, 70);
+    background-color: #d22954;
     overflow-y: auto;
+    border-radius: 3px;
 }
 
 #TituloCarrinho{
@@ -264,7 +265,7 @@ p{
 .itemCarrinho{
     width: 98%;
     height: 70px;
-    border: solid 1px rgb(70, 70, 70);
+    background-color: #f93163;
     margin: 10px auto;
     display: flex;
     flex-direction: row;
@@ -279,14 +280,17 @@ p{
 
 .nome-carrinho{
     margin: auto 10px;
+    color: white;
 }
 
 .qtd-carrinho{
     margin: auto 15px auto auto;
+    color: white;
 }
 
 .preco-carrinho{
     margin: auto 15px;
+    color: white;
 }
 
 #DivTotal{
@@ -300,14 +304,15 @@ p{
     width: 90%;
     height: 35px;
     margin: 5px auto 20px auto;
-    border: solid 1px rgb(70, 70, 70);
+    background-color: #f93163;
+    border-radius: 3px;
     display: flex;
     flex-direction: row;
 }
 
 /* ------------------ Dados pessoais ----------------- */
 
-#DivDados{
+.DivDados{
     width: 60%;
     height: 60vh;
     margin: 20px auto;
@@ -344,9 +349,9 @@ p{
 
 .dadosLogin{
     height: 35px;
-    width: 80%;
+    width: 23.5vw;
     font-size: 18px;
-    margin: 0 auto auto 20px;
+
     border-radius: 50px;
     border: none;
     padding-left: 15px;
@@ -357,7 +362,7 @@ p{
 }
 
 #Endereco{
-    width: 40%;
+    width: 90%;
     height: 90%;
     border-radius: 5px;
     margin: auto;
@@ -378,7 +383,7 @@ p{
     font-size: 24px;
     font-weight: bold;
     border: none;
-    margin: 25px auto;
+    margin: 10px auto;
     display: flex;
     justify-content: center;
     align-items: center;

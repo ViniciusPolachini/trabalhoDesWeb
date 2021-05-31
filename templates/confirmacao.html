@@ -1,0 +1,37 @@
+<!DOCTYPE html >
+
+<html>
+    <head>
+        <title>Confirmação de Compra</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/home.css') }}">
+    </head>
+    <body>
+        <div id="Navbar">
+            <div id="LogoPic">
+                <a href="{{ url_for('index') }}">
+                    <img id="LogoPic2" src="{{ url_for('static',filename='images/logo.png') }}" alt="">
+                </a>
+            </div>
+            <div id="DivBusca">
+                <img id="Lupa" src="{{ url_for('static',filename='images/lupa.png') }}" alt="">
+                <form action="">
+                    <input id="InputBusca" type="text" placeholder="O que você deseja?">
+                </form>
+            </div>
+            <div>
+                <div id="Login"><a id="LoginLetra" href="localhost:5000/login"> Faça seu login</a></div>
+            </div>
+            <div id="DivCarrinho">
+                <a href="{{ url_for('carrinho') }}">
+                    <img id="CarrinhoLogo" src="{{ url_for('static',filename='images/carrinho.png') }}" alt="">
+                </a>
+            </div>
+        </div>
+    
+        <div id="Categories">
+            <div id="DivCategorias">
+                <p id="TituloCarrinho">Confirmação de Compra</p>
+            </div>
+        </div>
+    </body>
+</html>

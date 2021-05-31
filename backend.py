@@ -8,7 +8,7 @@ def index():
 
 @app.route('/user')
 def user():
-    return render_template("user.html")
+    return render_template("confirmacao.html")
 
 @app.route('/carrinho')
 def carrinho():
