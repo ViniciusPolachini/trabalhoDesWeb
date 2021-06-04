@@ -53,6 +53,8 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    
+    
 }
 
 /*-------- Navbar section --------*/
@@ -457,7 +459,7 @@ p{
 
 #phone{
     height: 35px;
-    width: 31.6%;
+    width: 100%;
     font-size: 18px;
     border-radius: 50px;
     border: none;
