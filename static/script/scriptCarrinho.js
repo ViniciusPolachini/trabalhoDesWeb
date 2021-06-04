@@ -41,6 +41,10 @@ $(function(){
     });    
 });
 
+$(document).ready(function(){
+    $('#Cep').mask('99999-999');
+    $('#Numero').mask('999999');
+  });
 
 function criaCarrinho(){
 

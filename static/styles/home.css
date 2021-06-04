@@ -361,19 +361,6 @@ p{
     outline: none;
 }
 
-#Endereco{
-    width: 90%;
-    height: 90%;
-    border-radius: 5px;
-    margin: auto;
-    display: flex;
-    align-items: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #f93163;
-    box-shadow: 0px 0px 5px 5px #d22954; 
-}
-
 .Blogin{
     height: 50px;
     width: 92%;
@@ -392,4 +379,84 @@ p{
 }
 .Blogin:hover{
     box-shadow: 1px 2px 4px rgb(0, 0, 0, .5);
+}
+
+#Endereco{
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+    margin: auto;
+    display: flex;
+    align-items: flex;
+    flex-direction: column;
+    background-color: #f93163;
+    box-shadow: 0px 0px 5px 5px #d22954; 
+}
+
+#Rua{ 
+    width: 85%;
+    height: 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    padding-left: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+#Numero{
+    width: 10%;
+    height: 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+#Bairro{
+    height: 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    padding-left: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+#Complemento{
+    width: 75%;
+    height: 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+#CEP{
+    height: 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    padding-left: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+#estado{
+    height: 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    padding-left: 15px;    
+    margin-top: 5px;
+}
+
+#phone{
+    height: 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    padding-left: 50px;
+    margin-top: 5px;
 }
