@@ -415,6 +415,7 @@ p{
 
 #Bairro{
     height: 35px;
+    width: 20%;
     font-size: 18px;
     border-radius: 50px;
     border: none;
@@ -435,6 +436,7 @@ p{
 
 #CEP{
     height: 35px;
+    width: 31.6%;
     font-size: 18px;
     border-radius: 50px;
     border: none;
@@ -445,6 +447,7 @@ p{
 
 #estado{
     height: 35px;
+    width: 31.6%;
     font-size: 18px;
     border-radius: 50px;
     border: none;
@@ -454,6 +457,7 @@ p{
 
 #phone{
     height: 35px;
+    width: 31.6%;
     font-size: 18px;
     border-radius: 50px;
     border: none;
