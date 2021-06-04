@@ -72,28 +72,35 @@
             <div id="Endereco">
                 <p class="tituloDados">Dados da Entrega</p>
                 <form action="">
-                    <input type="text" id="Rua" placeholder="Endereco">
-                    <input type="text" name="" id="Numero" placeholder="Numero">
-                    <input type="text" id="Bairro" placeholder="Bairro">
-                    <input type="text" id="Complemento" placeholder="Complemento">
-                    <input type="text" name="" id="Cep" placeholder="CEP">
-                    <select id="estado"></select>
-                    <input type="tel" id="phone">
-                    <script
-                        src="{{ url_for('static',filename='Api/intl-tel-input/build/js/intlTelInput.js') }}"></script>
-                    <script>
-                        var input = document.querySelector("#phone");
-                        window.intlTelInput(input, {
-                            initialCountry: "auto",
-                            geoIpLookup: function (callback) {
-                                $.get('https://ipinfo.io', function () { }, "jsonp").always(function (resp) {
-                                    var countryCode = (resp && resp.country) ? resp.country : "br";
-                                    callback(countryCode);
-                                });
-                            },
-                            utilsScript: "{{ url_for('static',filename='Api/intl-tel-input/build/js/utils.js') }}"
-                        });
-                    </script>
+                    <div class="linha">
+                        <input type="text" id="Rua" placeholder="Endereco">
+                        <input type="text" name="" id="Numero" placeholder="Numero">
+                     </div>
+                    <div class="linha">
+                        <input type="text" id="Bairro" placeholder="Bairro">
+                        <input type="text" id="Complemento" placeholder="Complemento">
+                    </div>
+                    <div class="linha">
+                        <input type="text" name="" id="Cep" placeholder="CEP">
+                        <select id="estado"></select>
+                        <input type="tel" id="phone">
+                        <script
+                            src="{{ url_for('static',filename='Api/intl-tel-input/build/js/intlTelInput.js') }}"></script>
+                        <script>
+                            var input = document.querySelector("#phone");
+                            window.intlTelInput(input, {
+                                initialCountry: "auto",
+                                geoIpLookup: function (callback) {
+                                    $.get('https://ipinfo.io', function () { }, "jsonp").always(function (resp) {
+                                        var countryCode = (resp && resp.country) ? resp.country : "br";
+                                        callback(countryCode);
+                                    });
+                                },
+                                utilsScript: "{{ url_for('static',filename='Api/intl-tel-input/build/js/utils.js') }}"
+                            });
+                        </script>
+                    </div>
+                   
                     <input type="button" class="Blogin" id="BFinalizar" value="Finalizar Compra">
                 </form>
 
