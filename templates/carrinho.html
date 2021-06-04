@@ -6,7 +6,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="#" />
-    <link rel="stylesheet" href="{{ url_for('static',filename='Api/intl-tel-input/build/css/intlTelInput.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='Api/intl-tel-input/static/css/intlTelInput.css') }}">
 </head>
 
 <body>
@@ -85,7 +85,7 @@
                         <select id="estado"></select>
                         <input type="tel" id="phone">
                         <script
-                            src="{{ url_for('static',filename='Api/intl-tel-input/build/js/intlTelInput.js') }}"></script>
+                            src="{{ url_for('static',filename='Api/intl-tel-input/static/js/intlTelInput.js') }}"></script>
                         <script>
                             var input = document.querySelector("#phone");
                             window.intlTelInput(input, {
@@ -96,7 +96,7 @@
                                         callback(countryCode);
                                     });
                                 },
-                                utilsScript: "{{ url_for('static',filename='Api/intl-tel-input/build/js/utils.js') }}"
+                                utilsScript: "{{ url_for('static',filename='Api/intl-tel-input/static/js/utils.js') }}"
                             });
                         </script>
                     </div>
