@@ -6,8 +6,8 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/user')
-def user():
+@app.route('/confirmacao')
+def confirmacao():
     return render_template("confirmacao.html")
 
 @app.route('/carrinho')
