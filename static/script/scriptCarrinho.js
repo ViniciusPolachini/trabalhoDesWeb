@@ -132,5 +132,23 @@ function criaCarrinho(){
     document.getElementById('Subtotal').appendChild(divtotal);
 }
 
+function informacoesPessoais()
+{
+    let infos=document.getElementById("informacoes_pessoais").elements;
+
+    let dados=[{
+        cep: infos[0],
+        endereco: infos[1],
+        rua: infos[2],
+        numero: infos[3],
+        bairro: infos[4],
+        complemento: infos[5],
+        tel: infos[6]
+    }];
+    let dadosJson = JSON.stringify(dados);
+    localStorage.clear('informacoes');
+    localStorage.setItem('informacoes', itens)
+}
+
 
 window.onload = criaCarrinho();
