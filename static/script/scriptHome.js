@@ -18,11 +18,11 @@ let Produtos = [
     
     {Nome: "Chave de Afinação Premium DB Percussion K02 com Anilha de Chaveiro", categoria: "Acessorios", Preco: 18.00, AVista:15.00, Img: "static/images/acessorio.PNG", id:13},
 
-    {Nome: "Baqueta C Ibanez Hickory 5A Ponta De Madeira", categoria: "Baquetas", Preco: 55.00, AVista:47.00, Img: "static/images/baqueta1.png", id:13},
-    {Nome: "Baqueta Alba 5A Shark Grip em Marfim Padrão 5A (2051)", categoria: "Baquetas", Preco: 23.00, AVista:19.00, Img: "static/images/baqueta2.png", id:14},
+    {Nome: "Baqueta C Ibanez Hickory 5A Ponta De Madeira", categoria: "Baquetas", Preco: 55.00, AVista:47.00, Img: "static/images/baqueta1.png", id:14},
+    {Nome: "Baqueta Alba 5A Shark Grip em Marfim Padrão 5A (2051)", categoria: "Baquetas", Preco: 23.00, AVista:19.00, Img: "static/images/baqueta2.png", id:15},
 
-    {Nome: "Kit de Peles de Caixa Attack 14'' CX2 Medium Coated 2-Ply Ridge Filme Duplo e Pele Resposta Hazy Thin", categoria: "Peles", Preco: 127.00, AVista:109.00, Img: "static/images/pele1.png", id:15},
-    {Nome: "Kit de Peles Remo Encore Pinstripe Tons 10'',12'',14'' Filme Duplo tipo Hidráulica Clássica (10649)", categoria: "Peles", Preco: 209.00, AVista:179.00, Img: "static/images/pele2.png", id:16},
+    {Nome: "Kit de Peles de Caixa Attack 14'' CX2 Medium Coated 2-Ply Ridge Filme Duplo e Pele Resposta Hazy Thin", categoria: "Peles", Preco: 127.00, AVista:109.00, Img: "static/images/pele1.png", id:16},
+    {Nome: "Kit de Peles Remo Encore Pinstripe Tons 10'',12'',14'' Filme Duplo tipo Hidráulica Clássica (10649)", categoria: "Peles", Preco: 209.00, AVista:179.00, Img: "static/images/pele2.png", id:17},
 ];
 
 let Carrinho = [];
