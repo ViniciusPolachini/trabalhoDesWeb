@@ -138,13 +138,12 @@ function informacoesPessoais()
     let infos=document.getElementById("informacoes_pessoais").elements;
 
     let dados=[{
-        cep: infos[0].value,
-        endereco: infos[1].value,
-        rua: infos[2].value,
-        numero: infos[3].value,
-        bairro: infos[4].value,
-        complemento: infos[5].value,
-        tel: infos[6].value,
+        rua: infos[0].value,
+        numero: infos[1].value,
+        bairro: infos[2].value,
+        complemento: infos[3].value,
+        cep: infos[4].value,
+        tel: infos[5].value,
         produtos: produtos,
         total: subtotal
     }];
@@ -152,6 +151,6 @@ function informacoesPessoais()
     localStorage.clear('informacoes');
     localStorage.setItem('informacoes', dadosJson);
 }
-console.log(produtos);
+console.log(dados);
 
 window.onload = criaCarrinho();
