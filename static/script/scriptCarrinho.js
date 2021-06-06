@@ -2,6 +2,15 @@ let dados = JSON.parse(localStorage.getItem('carrinho'));
 
 let Carrinho = dados[0].itens;
 
+let produtos = [];
+let quantidade;
+let id;
+let produto;
+let subtotal=0.0;
+let carrinho=Carrinho;
+
+console.log(produtos);
+
 let Produtos = [
     {Nome: "Bateria Eletrônica Alesis Command Kit com Pads em Mesh Heads, Módulo 600 Sons e Rack Premium Chrome", categoria: "Baterias", Preco: 9999.00, AVista:8599.00, Img: "static/images/eletronica1.png", id:1},
     {Nome: "Bateria Eletrônica Alesis Nitro Mesh com Pad Dual Zone, Módulo 385 sons, Pedal Simples, Rack 4-Post", categoria: "Baterias", Preco: 5697.00, AVista:4899.00, Img: "static/images/eletronica2.png", id:2},
@@ -20,12 +29,38 @@ let Produtos = [
     
     {Nome: "Chave de Afinação Premium DB Percussion K02 com Anilha de Chaveiro", categoria: "Acessorios", Preco: 18.00, AVista:15.00, Img: "static/images/acessorio.PNG", id:13},
 
-    {Nome: "Baqueta C Ibanez Hickory 5A Ponta De Madeira", categoria: "Baquetas", Preco: 55.00, AVista:47.00, Img: "static/images/baqueta1.png", id:13},
-    {Nome: "Baqueta Alba 5A Shark Grip em Marfim Padrão 5A (2051)", categoria: "Baquetas", Preco: 23.00, AVista:19.00, Img: "static/images/baqueta2.png", id:14},
+    {Nome: "Baqueta C Ibanez Hickory 5A Ponta De Madeira", categoria: "Baquetas", Preco: 55.00, AVista:47.00, Img: "static/images/baqueta1.png", id:14},
+    {Nome: "Baqueta Alba 5A Shark Grip em Marfim Padrão 5A (2051)", categoria: "Baquetas", Preco: 23.00, AVista:19.00, Img: "static/images/baqueta2.png", id:15},
 
-    {Nome: "Kit de Peles de Caixa Attack 14'' CX2 Medium Coated 2-Ply Ridge Filme Duplo e Pele Resposta Hazy Thin", categoria: "Peles", Preco: 127.00, AVista:109.00, Img: "static/images/pele1.png", id:15},
-    {Nome: "Kit de Peles Remo Encore Pinstripe Tons 10'',12'',14'' Filme Duplo tipo Hidráulica Clássica (10649)", categoria: "Peles", Preco: 209.00, AVista:179.00, Img: "static/images/pele2.png", id:16},
+    {Nome: "Kit de Peles de Caixa Attack 14'' CX2 Medium Coated 2-Ply Ridge Filme Duplo e Pele Resposta Hazy Thin", categoria: "Peles", Preco: 127.00, AVista:109.00, Img: "static/images/pele1.png", id:16},
+    {Nome: "Kit de Peles Remo Encore Pinstripe Tons 10'',12'',14'' Filme Duplo tipo Hidráulica Clássica (10649)", categoria: "Peles", Preco: 209.00, AVista:179.00, Img: "static/images/pele2.png", id:17},
 ];
+
+while(carrinho.length){
+
+    nome = "";
+    quantidade = 1;
+    id = carrinho[0];
+    carrinho.splice(0,1);
+    
+    for(let i=0; i<Produtos.length; i++){
+        if(Produtos[i].id == id){
+            produto = Produtos[i];
+            subtotal += produto.Preco;
+            break;
+        }
+    }
+    
+    for(let i=0; i<carrinho.length; i++){
+        if(id==carrinho[i]){
+            quantidade ++;
+            carrinho.splice(i,1);
+            subtotal += produto.Preco;
+        }
+    }
+
+    produtos.push({produto: produto, quantidade: quantidade});
+}
 
 $(function(){
     var opcoesEstados;
@@ -46,49 +81,15 @@ $(document).ready(function(){
     $('#Numero').mask('999999');
   });
 
-function criaCarrinho(){
-
-    let carrinho = Carrinho;
-    let produtos = [];
-    let quantidade;
-    let id;
-    let produto;
-
-    while(carrinho.length){
-
-        nome = "";
-        quantidade = 1;
-        id = carrinho[0];
-        carrinho.splice(0,1);
-        
-        
-        for(let i=0; i<Produtos.length; i++){
-           if(Produtos[i].id == id){
-               produto = Produtos[i];
-               break;
-           }
-        }
-        
-        for(let i=0; i<carrinho.length; i++){
-            if(id==carrinho[i]){
-                quantidade ++;
-                carrinho.splice(i,1);
-            }
-        }
-
-        produtos.push({produto: produto, quantidade: quantidade});
-    }
+function criaCarrinho(){    
 
     let div;
     let img;
     let Pnome;
     let Pquantidade;
     let Ppreco;
-    let subtotal = 0.0;
 
     for(let i of produtos){
-
-        subtotal += i.produto.Preco;
 
         div = document.createElement('div');
         img = document.createElement('img');
@@ -137,18 +138,20 @@ function informacoesPessoais()
     let infos=document.getElementById("informacoes_pessoais").elements;
 
     let dados=[{
-        cep: infos[0],
-        endereco: infos[1],
-        rua: infos[2],
-        numero: infos[3],
-        bairro: infos[4],
-        complemento: infos[5],
-        tel: infos[6]
+        cep: infos[0].value,
+        endereco: infos[1].value,
+        rua: infos[2].value,
+        numero: infos[3].value,
+        bairro: infos[4].value,
+        complemento: infos[5].value,
+        tel: infos[6].value,
+        produtos: produtos,
+        total: subtotal
     }];
     let dadosJson = JSON.stringify(dados);
     localStorage.clear('informacoes');
-    localStorage.setItem('informacoes', itens)
+    localStorage.setItem('informacoes', dadosJson);
 }
-
+console.log(produtos);
 
 window.onload = criaCarrinho();

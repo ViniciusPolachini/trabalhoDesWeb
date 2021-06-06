@@ -71,7 +71,7 @@
         <div class="DivDados">
             <div id="Endereco">
                 <p class="tituloDados">Dados da Entrega</p>
-                <form action="">
+                <form action="" id="informacoes_pessoais">
                     <div class="linha">
                         <input type="text" id="Rua" placeholder="Endereco">
                         <input type="text" name="" id="Numero" placeholder="Numero">
@@ -93,8 +93,7 @@
                             });
                         </script>
                     </div>
-                    <input type="submit" class="Blogin" id="BFinalizar" value="Finalizar Compra">
-
+                    <input onclick="informacoesPessoais()" type="submit" class="Blogin" id="BFinalizar" value="Finalizar Compra">
                 </form>
             </div>
         </div>
