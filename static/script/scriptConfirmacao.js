@@ -1,8 +1,6 @@
 let dados = JSON.parse(localStorage.getItem('informacoes'));
 
-let Informacoes = dados[0].items;
-
-console.log(Informacoes);
+let Informacoes = dados[0];
 
 function getRandomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -25,9 +23,49 @@ document.getElementById('DivNumeroPedido').appendChild(pNumeroPedido);
 
 // Div Carrinho
 
+for(let i of Informacoes.produtos){
+    div = document.createElement('div');
+    img = document.createElement('img');
+    Pnome = document.createElement('p');
+    Pquantidade = document.createElement('p');
+    Ppreco = document.createElement('p');
+
+    div.setAttribute('class', 'itemCarrinho');
+    img.setAttribute('class', 'iconeproduto');
+    img.setAttribute('src', i.produto.Img);
+    Pnome.setAttribute('class', 'nome-carrinho');
+    Pquantidade.setAttribute('class', 'qtd-carrinho');
+    Ppreco.setAttribute('class', 'preco-carrinho');
+
+    Pnome.innerHTML = i.produto.Nome;
+    Pquantidade.innerHTML = `Qtd: ${i.quantidade}`;
+    Ppreco.innerHTML = `R$${i.produto.Preco},00`;
+
+    div.appendChild(img);
+    div.appendChild(Pnome);
+    div.appendChild(Pquantidade);
+    div.appendChild(Ppreco);
+
+    document.getElementById('Carrinho').appendChild(div);
+}
 
 // Div Total
 
+divtotal = document.createElement('div');
+ptotal = document.createElement('p');
+total = document.createElement('p');
+
+divtotal.setAttribute('id', 'DivTotal');
+ptotal.setAttribute('class', 'nome-carrinho');
+total.setAttribute('class', 'qtd-carrinho');
+ 
+ptotal.innerHTML = `Total:`;
+total.innerHTML = `R$${Informacoes.total},00`;
+
+divtotal.appendChild(ptotal);
+divtotal.appendChild(total);
+
+document.getElementById('Subtotal').appendChild(divtotal);
 
 // Div Endereço de entrega
 let pEndereco = document.createElement('p');
@@ -42,4 +80,3 @@ pfrete.setAttribute('class', 'texto');
 pfrete.innerHTML=`Tempo estimado para chegada do pedido: ${frete} dias.`;
 document.getElementById('ContentConfirmacao').appendChild(pfrete);
 
-console.log(localStorage.getItem("informacoes"))
