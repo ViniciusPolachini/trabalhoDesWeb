@@ -67,16 +67,11 @@ divtotal.appendChild(total);
 
 document.getElementById('Subtotal').appendChild(divtotal);
 
-// Div Endereço de entrega
+// Endereço de entrega
+let frete = gerarFrete();
 let pEndereco = document.createElement('p');
 pEndereco.setAttribute('class', 'texto');
-pEndereco.innerHTML=`${dados.rua}`;
+pEndereco.innerHTML=`O produto será entregue em: ${Informacoes.rua}, nº ${Informacoes.numero} - ${Informacoes.bairro} 
+<br> Cep: ${Informacoes.cep}
+<br>Tempo estimado para chegada do pedido: ${frete} a ${frete+5} dias.`;
 document.getElementById('ContentConfirmacao').appendChild(pEndereco);
-
-// Div frete
-let frete = gerarFrete();
-let pfrete = document.createElement('p');
-pfrete.setAttribute('class', 'texto');
-pfrete.innerHTML=`Tempo estimado para chegada do pedido: ${frete} dias.`;
-document.getElementById('ContentConfirmacao').appendChild(pfrete);
-
