@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/home.css') }}">
+</head>
+
+<body>
+
+    <div id="Navbar">
+        <div id="LogoPic">
+            <a href="{{ url_for('index') }}">
+                <img id="LogoPic2" src="{{ url_for('static',filename='images/logo.png') }}" alt="">
+            </a>
+        </div>
+        <div id="DivBusca">
+            <img id="Lupa" src="{{ url_for('static',filename='images/lupa.png') }}" alt="">
+            <form action="">
+                <input id="InputBusca" type="text" placeholder="O que você deseja?">
+            </form>
+        </div>
+    </div>
+
+    <div id="Categories">
+        <div id="DivCategorias">
+            <p id="TituloCarrinho">Login</p>
+        </div>
+    </div>
+        
+    <div id="ContentCarrinho">
+        <div class="DivDados">
+            <div id="LoginCarrinho">
+                <p class="tituloDados">Faça seu Login</p>
+                <label class="label1" for="email">Email:
+                    <input type="email" class="dadosLogin">
+                </label>
+                <label class="label1" for="password">Senha:
+                    <input type="password" class="dadosLogin">
+                </label>
+                <input type="button" class="Blogin" value="Login">
+            </div>
+            <div id="LoginCarrinho">
+                <p class="tituloDados">Não possui cadastro?</p>
+                <label class="label1" for="email">Email:
+                    <input type="email" class="dadosLogin">
+                </label>
+                <label class="label1" for="password">Senha:
+                    <input type="password" class="dadosLogin">
+                </label>
+                <label class="label1" for="password">Confirme sua senha:
+                    <input type="password" class="dadosLogin">
+                </label>
+                <input type="button" class="Blogin" value="Cadastrar">
+            </div>
+        </div>
+    </div>
+    </body>
+    
+    </html>
