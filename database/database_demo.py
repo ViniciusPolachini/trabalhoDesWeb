@@ -35,7 +35,7 @@ def add_product(product):
     conn.commit()
     conn.close()
 
-   
+
 def select_product(product_id):  # passar o parametro como STRING ('1')
     conn = sqlite3.connect(r'./database/database.db')
     cursor = conn.cursor()
@@ -63,3 +63,29 @@ def delete_product(product_id):  # passar o parametro como STRING ('1')
     cursor.execute(Q1, (product_id,))
     conn.commit()
     conn.close()
+
+
+def fetch_product_valueASC():
+    conn = sqlite3.connect(r'./database/database.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM products ORDER BY preco")
+    product = cursor.fetchall()
+    conn.close()
+    return(product)
+
+
+def fetch_product_valueDESC():
+    conn = sqlite3.connect(r'./database/database.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM products ORDER BY preco DESC")
+    product = cursor.fetchall()
+    conn.close()
+    return(product)
+
+def fetch_product_all():
+    conn = sqlite3.connect(r'./database/database.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM products")
+    product = cursor.fetchall()
+    conn.close()
+    return(product)
