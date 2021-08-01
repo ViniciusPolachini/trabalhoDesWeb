@@ -17,6 +17,14 @@ def confirmacao():
 def carrinho():
     return render_template("carrinho.html")
 
+@app.route('/login')
+def login():
+    return render_template("login.html")
+
+@app.route('/singup')
+def singup():
+    return render_template("singup.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)

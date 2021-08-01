@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>Sing up</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/home.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/intlTelInput.css') }}">
+</head>
+
+<body>
+
+    <div id="Navbar">
+        <div id="LogoPic">
+            <a href="{{ url_for('index') }}">
+                <img id="LogoPic2" src="{{ url_for('static',filename='images/logo.png') }}" alt="">
+            </a>
+        </div>
+        <div id="DivBusca">
+            <img id="Lupa" src="{{ url_for('static',filename='images/lupa.png') }}" alt="">
+            <form action="">
+                <input id="InputBusca" type="text" placeholder="O que você deseja?">
+            </form>
+        </div>
+    </div>
+
+    <div id="Categories">
+        <div id="DivCategorias">
+            <p id="TituloCarrinho">Cadastre-se</p>
+        </div>
+    </div>
+        
+    <div id="ContentCarrinho">
+        <div id="Endereco">
+            <p class="tituloDados">Cadastro</p>
+            <form action="/confirmacao" id="informacoes_pessoais">
+                <div class="linha">
+                    <input type="text" id="Rua" placeholder="Endereco">
+                    <input type="text" name="" id="Numero" placeholder="Numero">
+                </div>
+                <div class="linha">
+                    <input type="text" id="Bairro" placeholder="Bairro">
+                    <input type="text" id="Complemento" placeholder="Complemento">
+                </div>
+                <div class="linha">
+                    <input type="text" name="" id="Cep" placeholder="CEP">
+                    <select id="estado"></select>
+                    <input type="tel" id="phone">
+                    <script src="{{ url_for('static',filename='script/intlTelInput.js') }}"></script>
+                    <script>
+                        var input = document.querySelector("#phone");
+                        window.intlTelInput(input, {
+                            initialCountry: "br",
+                            utilsScript: "{{ url_for('static',filename='script/utils.js') }}"
+                        });
+                    </script>
+                </div>
+                    <input onclick="informacoesPessoais()" type="submit" class="Blogin" id="BFinalizar" value="Cadastrar">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static',filename='script/scriptCarrinho.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+</body>
+    
+</html>
