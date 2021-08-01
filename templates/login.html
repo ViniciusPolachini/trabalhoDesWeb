@@ -30,30 +30,35 @@
     <div id="ContentCarrinho">
         <div class="DivDados">
             <div id="LoginCarrinho">
-                <p class="tituloDados">Faça seu Login</p>
-                <label class="label1" for="email">Email:
-                    <input type="email" class="dadosLogin">
-                </label>
-                <label class="label1" for="password">Senha:
-                    <input type="password" class="dadosLogin">
-                </label>
-                <input type="button" class="Blogin" value="Login">
+                <form name="login" method="" action="" id="formlogar">
+                    <p class="tituloDados">Faça seu Login</p>
+                    <label class="label1" for="email">Email:
+                        <input name="email" type="email" class="dadosLogin">
+                    </label>
+                    <label class="label1" for="password">Senha:
+                        <input name="senha" type="password" class="dadosLogin">
+                    </label>
+                    <input type="button" class="Blogin" value="Login" id="logar">
+                </form>
             </div>
             <div id="LoginCarrinho">
-                <p class="tituloDados">Não possui cadastro?</p>
-                <label class="label1" for="email">Email:
-                    <input type="email" class="dadosLogin">
-                </label>
-                <label class="label1" for="password">Senha:
-                    <input type="password" class="dadosLogin">
-                </label>
-                <label class="label1" for="password">Confirme sua senha:
-                    <input type="password" class="dadosLogin">
-                </label>
-                <input type="button" class="Blogin" value="Cadastrar">
+                <form action="">
+                    <p class="tituloDados">Não possui cadastro?</p>
+                    <label class="label1" for="email">Email:
+                        <input type="email" class="dadosLogin">
+                    </label>
+                    <label class="label1" for="password">Senha:
+                        <input type="password" class="dadosLogin">
+                    </label>
+                    <label class="label1" for="password">Confirme sua senha:
+                        <input type="password" class="dadosLogin">
+                    </label>
+                    <input type="submit" class="Blogin" value="Cadastrar">
+                </form>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="{{ url_for('static',filename='script/scriptCarrinho.js') }}"></script>
     </body>
     
     </html>

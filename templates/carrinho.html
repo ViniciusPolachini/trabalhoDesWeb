@@ -43,64 +43,12 @@
     <div id="ContentCarrinho">
         <div id="Carrinho"></div>
         <div id="Subtotal"></div>
-        <div class="DivDados">
-            <div id="LoginCarrinho">
-                <p class="tituloDados">Faça seu Login</p>
-                <label class="label1" for="email">Email:
-                    <input type="email" class="dadosLogin">
-                </label>
-                <label class="label1" for="password">Senha:
-                    <input type="password" class="dadosLogin">
-                </label>
-                <input type="button" class="Blogin" value="Login">
-            </div>
-            <div id="LoginCarrinho">
-                <p class="tituloDados">Não possui cadastro?</p>
-                <label class="label1" for="email">Email:
-                    <input type="email" class="dadosLogin">
-                </label>
-                <label class="label1" for="password">Senha:
-                    <input type="password" class="dadosLogin">
-                </label>
-                <label class="label1" for="password">Confirme sua senha:
-                    <input type="password" class="dadosLogin">
-                </label>
-                <input type="button" class="Blogin" value="Cadastrar">
-            </div>
-        </div>
-        <div class="DivDados">
-            <div id="Endereco">
-                <p class="tituloDados">Dados da Entrega</p>
-                <form action="/confirmacao" id="informacoes_pessoais">
-                    <div class="linha">
-                        <input type="text" id="Rua" placeholder="Endereco">
-                        <input type="text" name="" id="Numero" placeholder="Numero">
-                    </div>
-                    <div class="linha">
-                        <input type="text" id="Bairro" placeholder="Bairro">
-                        <input type="text" id="Complemento" placeholder="Complemento">
-                    </div>
-                    <div class="linha">
-                        <input type="text" name="" id="Cep" placeholder="CEP">
-                        <select id="estado"></select>
-                        <input type="tel" id="phone">
-                        <script src="{{ url_for('static',filename='script/intlTelInput.js') }}"></script>
-                        <script>
-                            var input = document.querySelector("#phone");
-                            window.intlTelInput(input, {
-                                initialCountry: "br",
-                                utilsScript: "{{ url_for('static',filename='script/utils.js') }}"
-                            });
-                        </script>
-                    </div>
-                        <input onclick="informacoesPessoais()" type="submit" class="Blogin" id="BFinalizar" value="Finalizar Compra">
-                </form>
-            </div>
-        </div>
+        <a href="{{ url_for('confirmacao') }}"></a><button class="Blogin" id="BFinalizar">  Finalizar Compra</button></a>
+        
     </div>
     <script type="text/javascript" src="{{ url_for('static',filename='script/scriptCarrinho.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.js%22%3E"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js%22%3E"></script>
 </body>
 
 </html>
