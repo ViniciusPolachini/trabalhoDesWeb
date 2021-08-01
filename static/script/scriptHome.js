@@ -29,7 +29,7 @@ let Carrinho = [];
 
 function criaProdutos(produtos)
 {
-    document.getElementById("Content").innerHTML = "";
+    document.getElementById("Produtos").innerHTML = "";
 
     let div;
     let img;
@@ -73,7 +73,7 @@ function criaProdutos(produtos)
         div.appendChild(divimg);
         div.appendChild(divtexto);
 
-        document.getElementById("Content").appendChild(div);
+        document.getElementById("Produtos").appendChild(div);
     }
 }
 
@@ -84,6 +84,20 @@ function filtrar (produtos, categoria){
         return false
     }
     return produtos.filter(filtro)
+}
+
+function filtrar_por_preço (produtos, faixa1, faixa2){
+    function filtro(produto){
+        if (produto.preco > faixa1 && produto.preco <= faixa2)
+            return true;
+        return false
+    }
+    return produtos.filter(filtro)
+}
+
+function recarregaProdutos_por_preco(faixa1, faixa2){
+    let itens = filtrar_por_preço (Produtos, faixa1, faixa2);
+    criaProdutos(itens);
 }
 
 function recarregaProdutos(categoria){
