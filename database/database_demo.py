@@ -10,6 +10,7 @@ def add_usr(usr):
     conn.close()
 
 
+#  Selecionar usuario pelo CPF
 def select_user(cpf):  # passar o parametro como STRING ('1')
     conn = sqlite3.connect(r'./database/database.db')
     cursor = conn.cursor()
@@ -36,6 +37,7 @@ def add_product(product):
     conn.close()
 
 
+# Selecionar o produto pelo ID
 def select_product(product_id):  # passar o parametro como STRING ('1')
     conn = sqlite3.connect(r'./database/database.db')
     cursor = conn.cursor()
@@ -46,6 +48,7 @@ def select_product(product_id):  # passar o parametro como STRING ('1')
     return(product)
 
 
+#  Selecionar o produo pela categoria
 def select_product_by_cat(categoria):  # passar o parametro como STRING ('1')
     conn = sqlite3.connect(r'./database/database.db')
     cursor = conn.cursor()
@@ -65,6 +68,7 @@ def delete_product(product_id):  # passar o parametro como STRING ('1')
     conn.close()
 
 
+#  Pegar todos os produtos pelo Valor CRESCENTE
 def fetch_product_valueASC():
     conn = sqlite3.connect(r'./database/database.db')
     cursor = conn.cursor()
@@ -74,6 +78,7 @@ def fetch_product_valueASC():
     return(product)
 
 
+#  Pegar todos os produtos pelo Valor DECRESCENTE
 def fetch_product_valueDESC():
     conn = sqlite3.connect(r'./database/database.db')
     cursor = conn.cursor()
@@ -82,6 +87,8 @@ def fetch_product_valueDESC():
     conn.close()
     return(product)
 
+
+#  Pegar todos os produtos
 def fetch_product_all():
     conn = sqlite3.connect(r'./database/database.db')
     cursor = conn.cursor()
