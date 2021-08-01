@@ -45,6 +45,15 @@ def select_product(product_id):  # passar o parametro como STRING ('1')
     return(product)
 
 
+def select_product_by_cat(categoria):  # passar o parametro como STRING ('1')
+    conn = sqlite3.connect(r'./database/database.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM products WHERE categoria = (?)", (categoria,))
+    product = cursor.fetchall()
+    conn.close()
+    return(product)
+
+
 def delete_product(product_id):  # passar o parametro como STRING ('1')
     conn = sqlite3.connect(r'./database/database.db')
     cursor = conn.cursor()
