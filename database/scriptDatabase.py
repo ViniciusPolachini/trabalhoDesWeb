@@ -116,3 +116,13 @@ def login_status(email, senha):
             return('Dados incorretos')
     except usr.DoesNotExist:
         return('Dados Incorretos')
+
+
+def update_product():
+    conn = sqlite3.connect(r'./database/database.db')
+    cursor = conn.cursor()
+    img=('static/images/bateria2.png')
+    cursor.execute('SELECT * FROM products')
+    cursor.execute('UPDATE products SET img = (?) WHERE product_id = 4', (img,))
+    conn.commit()
+    conn.close()
