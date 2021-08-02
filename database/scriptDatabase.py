@@ -103,6 +103,7 @@ def fetch_product_value(val1, val2):
     product = cursor.fetchall()
     print(product)
     conn.close()
+    return(product)
 
 
 #  Pegar todos os produtos

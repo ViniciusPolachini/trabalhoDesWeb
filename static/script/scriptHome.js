@@ -1,14 +1,20 @@
 /* Pagina principal */
 
+let dados = JSON.parse(localStorage.getItem('carrinho'));
+let Carrinho = dados ? dados[0].itens:[];
+
 let form = new FormData()
 form.append('categoria', '')
+form.append('max', '0')
+form.append('min', '0')
+
+console.log(form)
 
 fetch('/produtos', {method: 'POST', body: form})
 .then((res)=>{res.json()
     .then((produtos) =>{ criaProdutos(produtos)})
 })
 
-let Carrinho = [];
 
 function criaProdutos(produtos)
 {
@@ -60,9 +66,19 @@ function criaProdutos(produtos)
     }
 }
 
-function recarregaProdutos(categoria){
+function recarregaProdutos(categoria, item){
     let form = new FormData()
+    let valor = item!=null ? document.getElementById(item).value:0;
     form.append('categoria', categoria)
+    if(valor!="?"){
+        form.append('min', parseInt(valor)-250)
+        form.append('max', parseInt(valor))
+    }
+    else{
+        form.append('min', 1000)
+        form.append('max', 1000000)
+    }
+    
     fetch('/produtos', {method: 'POST', body: form})
     .then((res)=>{res.json()
     .then((produtos) =>{ criaProdutos(produtos)})
@@ -76,4 +92,3 @@ function enviaItens(){
     localStorage.clear('carrinho');
     localStorage.setItem('carrinho', itens)
 }
-

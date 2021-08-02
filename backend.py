@@ -76,8 +76,12 @@ def cadastro():
 def getProdutos():
     if request.method == 'POST':
         categoria = request.form['categoria']
+        minimo = request.form['min']
+        maximo = request.form['max']
         if categoria != "":
             lista = banco.select_product_by_cat(categoria)
+        elif maximo != '0':
+            lista = banco.fetch_product_value(int(minimo), int(maximo))
         else:
             lista = banco.fetch_product_all()
         produtos = []
