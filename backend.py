@@ -36,15 +36,15 @@ def scriptData():
         email = data.get("email")
         senha = data.get("senha")
         resultado = database.scriptDatabase.login_status(email, senha)
-        return 
-    return 
+        return resultado
+    return
 
 
 @app.route('/scriptCadastro', methods=['POST', 'GET'])
 def scriptCadastro():
     if request.method == 'POST':
         data = request.form
-        return 
+        return
     return
 
 
