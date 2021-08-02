@@ -9,8 +9,6 @@ let produto;
 let subtotal=0.0;
 let carrinho=Carrinho;
 
-console.log(produtos);
-
 let Produtos = [
     {Nome: "Bateria Eletrônica Alesis Command Kit com Pads em Mesh Heads, Módulo 600 Sons e Rack Premium Chrome", categoria: "Baterias", Preco: 9999.00, AVista:8599.00, Img: "static/images/eletronica1.png", id:1},
     {Nome: "Bateria Eletrônica Alesis Nitro Mesh com Pad Dual Zone, Módulo 385 sons, Pedal Simples, Rack 4-Post", categoria: "Baterias", Preco: 5697.00, AVista:4899.00, Img: "static/images/eletronica2.png", id:2},

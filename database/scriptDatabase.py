@@ -1,6 +1,5 @@
 import sqlite3
 
-
 def add_usr(usr):
     # usr = {('cpf','nome','email', 'senha', 'tel')}
     conn = sqlite3.connect(r'./database/database.db')
