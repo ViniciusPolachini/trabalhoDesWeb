@@ -4,7 +4,7 @@ def add_usr(usr):
     # usr = {('cpf','nome','email', 'senha', 'tel')}
     conn = sqlite3.connect(r'./database/database.db')
     cursor = conn.cursor()
-    cursor.execute("INSER INTO users VALUES (?,?,?,?,?)", usr)
+    cursor.execute("INSERT INTO users VALUES (?,?,?,?,?)", usr)
     conn.commit()
     conn.close()
 
@@ -14,6 +14,15 @@ def select_user(cpf):  # passar o parametro como STRING ('1')
     conn = sqlite3.connect(r'./database/database.db')
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM users WHERE cpf = (?)", (cpf,))
+    user = cursor.fetchall()
+    conn.close()
+    return(user)
+
+
+def select_user_byemail(email):  # passar o parametro como STRING ('1')
+    conn = sqlite3.connect(r'./database/database.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE email = (?)", (email,))
     user = cursor.fetchall()
     conn.close()
     return(user)
@@ -95,3 +104,15 @@ def fetch_product_all():
     product = cursor.fetchall()
     conn.close()
     return(product)
+
+
+def login_status(email, senha):
+    try:
+        usr = select_user_byemail(email,)
+        senha_bd = usr[0][3]
+        if senha == senha_bd:
+            return('Login feito com Sucesso')
+        else:
+            return('Dados incorretos')
+    except usr.DoesNotExist:
+        return('Dados Incorretos')

@@ -12,7 +12,7 @@ let Carrinho = [];
 
 function criaProdutos(produtos)
 {
-    document.getElementById("Content").innerHTML = "";
+    document.getElementById("Produtos").innerHTML = "";
 
     let div;
     let img;
@@ -56,17 +56,8 @@ function criaProdutos(produtos)
         div.appendChild(divimg);
         div.appendChild(divtexto);
 
-        document.getElementById("Content").appendChild(div);
+        document.getElementById("Produtos").appendChild(div);
     }
-}
-
-function filtrar (produtos, categoria){
-    function filtro (produto){
-        if (produto.categoria == categoria)
-            return true;
-        return false
-    }
-    return produtos.filter(filtro)
 }
 
 function recarregaProdutos(categoria){

@@ -53,8 +53,6 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    
-    
 }
 
 /*-------- Navbar section --------*/
@@ -159,6 +157,22 @@ body{
 }
 
 /*-------- Content Section --------*/
+
+#FiltroPreco{
+    margin: 10px 100px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#Produtos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 
 .produto{
     height: 500px;
@@ -386,6 +400,33 @@ p{
 }
 
 /* ------------------ Dados de Entrega ----------------- */
+
+#Nome{
+    width: 75%;
+    height: 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    padding-left: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+#Nome:focus{
+    outline-width: 0;
+}
+
+#Cpf{
+    width: 20%;
+    height: 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    padding-left: 15px;
+    margin-top: 5px;
+}
+#Cpf:focus{
+    outline-width: 0;
+}
 
 #Endereco{
     width: 90%;
