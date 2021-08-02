@@ -1,3 +1,5 @@
+
+$(document).ready(function(){
 let dados = JSON.parse(localStorage.getItem('informacoes'));
 
 let Informacoes = dados[0];
@@ -75,3 +77,4 @@ pEndereco.innerHTML=`O produto será entregue em: ${Informacoes.rua}, nº ${Info
 <br> Cep: ${Informacoes.cep}
 <br>Tempo estimado para chegada do pedido: ${frete} a ${frete+5} dias.`;
 document.getElementById('ContentConfirmacao').appendChild(pEndereco);
+});

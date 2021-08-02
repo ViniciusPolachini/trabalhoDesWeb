@@ -34,23 +34,27 @@
     <div id="ContentCarrinho">
         <div id="Endereco">
             <p class="tituloDados">Cadastro</p>
-            <form action="/confirmacao" id="informacoes_pessoais">
+            <form method='POST' action="http://localhost:5000/cadastro" id="informacoes_pessoais">
                 <div class="linha">
-                    <input type="text" id="Nome" placeholder="Nome">
-                    <input type="text" name="" id="Cpf" placeholder="CPF">
+                    <input name="email"type="text" id="Email" placeholder="Email">
+                    <input name="senha" type="password" id="Senha" placeholder="Senha">
                 </div>
                 <div class="linha">
-                    <input type="text" id="Rua" placeholder="Endereco">
-                    <input type="text" name="" id="Numero" placeholder="Numero">
+                    <input name="nome" type="text" id="Nome" placeholder="Nome">
+                    <input name="cpf" type="text" id="Cpf" placeholder="CPF">
                 </div>
                 <div class="linha">
-                    <input type="text" id="Bairro" placeholder="Bairro">
-                    <input type="text" id="Complemento" placeholder="Complemento">
+                    <input name="rua" type="text" id="Rua" placeholder="Endereco">
+                    <input name="numero" type="text" id="Numero" placeholder="Numero">
                 </div>
                 <div class="linha">
-                    <input type="text" name="" id="Cep" placeholder="CEP">
-                    <select id="estado"></select>
-                    <input type="tel" id="phone">
+                    <input name="bairro" type="text" id="Bairro" placeholder="Bairro">
+                    <input name="cidade" type="text" id="Cidade" placeholder="Cidade">
+                </div>
+                <div class="linha">
+                    <input type="text" name="cep" id="Cep" placeholder="CEP">
+                    <input name="estado" type="text" id="Estado" placeholder="Estado"></input>
+                    <input name="tel" type="tel" id="phone">
                     <script src="{{ url_for('static',filename='script/intlTelInput.js') }}"></script>
                     <script>
                         var input = document.querySelector("#phone");

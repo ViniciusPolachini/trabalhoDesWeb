@@ -415,6 +415,34 @@ p{
     outline-width: 0;
 }
 
+#Email{
+    width: 50%;
+    height: 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    padding-left: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+#Email:focus{
+    outline-width: 0;
+}
+
+#Senha{
+    width: 43%;
+    height: 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    padding-left: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+#Senha:focus{
+    outline-width: 0;
+}
+
 #Cpf{
     width: 20%;
     height: 35px;
@@ -429,12 +457,12 @@ p{
 }
 
 #Endereco{
-    width: 90%;
-    height: 90%;
+    width: auto;
+    height: auto;
     border-radius: 5px;
     margin: auto;
     display: flex;
-    align-items: flex;
+    align-items: center;
     flex-direction: column;
     background-color: #f93163;
     box-shadow: 0px 0px 5px 5px #d22954; 
@@ -481,7 +509,7 @@ p{
     outline-width: 0;
 }
 
-#Complemento{
+#Cidade{
     width: 75%;
     height: 35px;
     font-size: 18px;
@@ -490,7 +518,7 @@ p{
     padding-left: 15px;
     margin-top: 5px;
 }
-#Complemento:focus{
+#Cidade:focus{
     outline-width: 0;
 }
 
@@ -508,7 +536,7 @@ p{
     outline-width: 0;
 }
 
-#estado{
+#Estado{
     height: 35px;
     width: 31.6%;
     font-size: 18px;
@@ -517,7 +545,7 @@ p{
     padding-left: 15px;    
     margin-top: 5px;
 }
-#estado:focus{
+#Estado:focus{
     outline-width: 0;
 }
 

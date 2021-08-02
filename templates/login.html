@@ -30,32 +30,24 @@
     <div id="ContentCarrinho">
         <div class="DivDados">
             <div id="LoginCarrinho">
-                <form name="login" method='POST' action="http://localhost:5000/scriptLogin" id="formlogar">
+                <form name="login" method='POST' action="http://localhost:5000/login" id="formlogar">
                     <p class="tituloDados">Faça seu Login</p>
                     <label class="label1" for="email">Email:
                         <input name="email" type="email" class="dadosLogin">
                     </label>
                     <label class="label1" for="password">Senha:
                         <input name="senha" type="password" class="dadosLogin">
-                    </label>\
+                    </label>
                         <input type="submit" class="Blogin" value="Login">
                     
                 </form>
             </div>
             <div id="LoginCarrinho">
-                <form method='POST' action="http://localhost:5000/scriptCadastro">
-                    <p class="tituloDados">Não possui cadastro?</p>
-                    <label class="label1" for="email">Email:
-                        <input type="email" id= 'email' class="dadosLogin">
-                    </label>
-                    <label class="label1" for="password">Senha:
-                        <input type="password" id = 'password'class="dadosLogin">
-                    </label>
-                    <label class="label1" for="password">Confirme sua senha:
-                        <input type="password" class="dadosLogin">
-                    </label>
+                <p class="tituloDados">Não possui cadastro?</p>
+                <a href="{{ url_for('singup') }}">
                     <input type="submit" class="Blogin" value="Cadastrar" onclick="">
-                </form>
+                </a>
+                    
             </div>
         </div>
     </div>
