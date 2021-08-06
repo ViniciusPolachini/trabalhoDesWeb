@@ -1,8 +1,7 @@
 
-$(document).ready(function(){
-let dados = JSON.parse(localStorage.getItem('informacoes'));
-
-let Informacoes = dados[0];
+function confirmacao(dados){
+let carrinho = JSON.parse(localStorage.getItem('informacoes'))[0];
+let endereco = dados;
 
 function getRandomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -25,7 +24,7 @@ document.getElementById('DivNumeroPedido').appendChild(pNumeroPedido);
 
 // Div Carrinho
 
-for(let i of Informacoes.produtos){
+for(let i of carrinho.produtos){
     div = document.createElement('div');
     img = document.createElement('img');
     Pnome = document.createElement('p');
@@ -62,7 +61,7 @@ ptotal.setAttribute('class', 'nome-carrinho');
 total.setAttribute('class', 'qtd-carrinho');
  
 ptotal.innerHTML = `Total:`;
-total.innerHTML = `R$${Informacoes.total},00`;
+total.innerHTML = `R$${carrinho.total},00`;
 
 divtotal.appendChild(ptotal);
 divtotal.appendChild(total);
@@ -73,8 +72,14 @@ document.getElementById('Subtotal').appendChild(divtotal);
 let frete = gerarFrete();
 let pEndereco = document.createElement('p');
 pEndereco.setAttribute('class', 'texto');
-pEndereco.innerHTML=`O produto será entregue em: ${Informacoes.rua}, nº ${Informacoes.numero} - ${Informacoes.bairro} 
-<br> Cep: ${Informacoes.cep}
+pEndereco.innerHTML=`O produto será entregue em: ${endereco[0]}, ${endereco[1]} - ${endereco[2]} 
 <br>Tempo estimado para chegada do pedido: ${frete} a ${frete+5} dias.`;
 document.getElementById('ContentConfirmacao').appendChild(pEndereco);
-});
+}
+
+fetch('/endereco', {method: 'GET'})
+.then(res=>{res.json()
+.then(dados => {
+    endereco = dados[0].endereco
+    confirmacao(endereco)
+})})

@@ -16,6 +16,15 @@ def add_address(endereco, cpf):
     conn.commit()
     conn.close()
 
+def select_address(cpf):
+    conn = sqlite3.connect(r'./database/database.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM addresses WHERE userscpf = (?)", (cpf,))
+    adress = cursor.fetchall()
+    print(adress)
+    conn.close()
+    return adress
+
 
 #  Selecionar usuario pelo CPF
 def select_user(cpf):  # passar o parametro como STRING ('1')

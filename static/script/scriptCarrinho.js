@@ -129,26 +129,16 @@ function criaCarrinho(){
     divtotal.appendChild(total);
 
     document.getElementById('Subtotal').appendChild(divtotal);
-}
-
-function informacoesPessoais()
-{
-    let infos=document.getElementById("informacoes_pessoais").elements;
 
     let dados=[{
-        rua: infos[0].value,
-        numero: infos[1].value,
-        bairro: infos[2].value,
-        complemento: infos[3].value,
-        cep: infos[4].value,
-        tel: infos[5].value,
         produtos: produtos,
         total: subtotal
     }];
     let dadosJson = JSON.stringify(dados);
+    console.log(dadosJson)
     localStorage.clear('informacoes');
     localStorage.setItem('informacoes', dadosJson);
+    
 }
-console.log(dados);
 
 window.onload = criaCarrinho();

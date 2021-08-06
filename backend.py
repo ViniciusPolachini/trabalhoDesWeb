@@ -91,6 +91,14 @@ def getProdutos():
             produtos.append(item)
         return jsonify(produtos)
 
+@app.route('/endereco', methods=['POST', 'GET'])
+def infoCompra():
+    if request.method == 'GET':
+        CPF = session["user"][0][0]
+        endereco = banco.select_address(CPF)
+        dados = [{'endereco':endereco[0]}]
+        return jsonify(dados)
+
 
 @app.route("/form", methods=["GET"])
 def get_form():
